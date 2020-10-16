@@ -1,38 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fefefe;
+  overflow-x: hidden;
+}
+
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.component {
+  width: 100%;
+  height: 90%;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.link {
+  text-decoration: none;
+  color: #fefefe;
+}
+
+/* NAVBAR COMPONENT */
+
+.navbar {
+  height: 10%;
+  width: 100vw;
+  background-color: #073f52;
+  color: #fefefe;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+}
+
+.title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: xx-large;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  transition: color 0.4s ease;
+}
+
+.nav-links > * {
+  padding: 1rem;
+  display: block;
+  transition: color ease-in-out 0.3s;
+}
+
+.nav-links > *:hover {
+  color: #26d1d1;
+}
+
+.nav-links h4 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+}
+
+.fa-shopping-cart {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .component {
+    height: 80%;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* HOME COMPONENT */
+
+.home-component {
+  background-image: linear-gradient(#9e9e9e, #eeeeee);
+}
+
+.home-child {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 8%;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  min-width: 120px;
+  max-width: 18%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.barbell-homepage {
+  display: flex;
+  justify-content: center;
+}
+
+.barbell-homepage img {
+  position: absolute;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity:1;
+  } 45% {
+    opacity:1;
+  } 55% {
+    opacity:0;
+  } 100% {
+    opacity:0;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.barbell-homepage img.loaded-barbell2 {
+  animation-name: fadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-direction: alternate;
+}
+
+.barbell-fade {
+  margin: 3rem;
+  width: 80%;
+  min-width: 240px;
+}
+
+@media (max-width: 800px) {
+  .home-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 80%;
+  }
+}
+
+/* EQUIPMENT COMPONENT */
+.weightlifting-header {
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.shop-items {
+  width: 75%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3%;
+}
+
+.item {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4b4b4b;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+}
+
+.item h4 {
+  padding: 7px 0 5px 0;
+}
+
+.item p {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  line-height: 1.3rem;
+}
+
+.item-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.item-price {
+  font-weight: 600;
+  padding-top: 7px;
+}
+
+@media (max-width: 800px) {
+  .shop-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 5%;
+  }
+}
+
+/* ABOUT COMPONENT */
+.about-component {
+  background-color: #fefefe;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.top-left-section {
+  background-image: url('./images/barbell-close.jpeg');
+  background-size: cover;
+}
+
+.text-section {
+  background-color: #eeeeee;
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.text-section div {
+  margin: 20px;
+}
+
+.text-section span {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #4b4b4b;
+}
+
+.text-section p {
+  line-height: 1.3rem;
+  margin: 1rem 2rem;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.bottom-left-section {
+  background-color: #fefefe;
+}
+
+.bottom-right-section {
+  width: auto;
+  background-image: url('./images/barbell-image.jpg');
+  background-size: cover;
+}
+
+@media (max-width: 800px) {
+  .about-component {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 45% auto auto 40%;
   }
 }
