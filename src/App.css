@@ -25,6 +25,10 @@ body {
   color: #fefefe;
 }
 
+.link-shop-item {
+  color: #4b4b4b;
+}
+
 /* NAVBAR COMPONENT */
 
 .navbar {
@@ -160,9 +164,10 @@ body {
 .weightlifting-header {
   text-align: center;
   padding: 2rem;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: bolder;
+  color: #4b4b4b;
 }
 
 .shop-items {
@@ -180,12 +185,23 @@ body {
   color: #4b4b4b;
 }
 
-.item img {
+.item-image-div {
+  overflow: hidden;
+}
+
+.item-image-div img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  transition: all 0.3s;
+  transform: scale(1);
+}
+
+.item-image-div:hover img {
+  transform: scale(1.1);
 }
 
 .item h4 {
+  font-family: 'Roboto', sans-serif;
   padding: 7px 0 5px 0;
 }
 
@@ -196,7 +212,6 @@ body {
 
 .item-name:hover {
   text-decoration: underline;
-  cursor: pointer;
 }
 
 .item-price {
@@ -261,7 +276,7 @@ body {
   background-size: cover;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
   .about-component {
     display: grid;
     grid-template-columns: 1fr;
