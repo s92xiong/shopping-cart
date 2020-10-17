@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-  const [cartItemCount, setCartItemCount] = useState(0);
-
+const Navbar = (props) => {
   return (
     <nav className="navbar">
       <Link to="/" className="link"><h1 className="title">ELEIKO</h1></Link>
@@ -18,7 +16,7 @@ const Navbar = () => {
           <div className="shopping-cart-div">
             <i className="fa fa-shopping-cart"></i>
             <div className="shopping-cart-count">
-              {(cartItemCount > 9) ? "9+" : cartItemCount}
+              {(props.cartItemCount > 9) ? "9+" : props.cartItemCount}
             </div>
           </div>
         </Link>
