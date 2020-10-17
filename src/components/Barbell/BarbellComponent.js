@@ -17,6 +17,7 @@ const BarbellComponent = (props) => {
         <h2>ELEIKO</h2>
         <hr/>
         <p>{props.itemName}</p>
+        <p><strong>{props.itemPrice}</strong></p>
         <form onSubmit={handleSubmit}>
           <InputNumberCart
             value={count}
@@ -24,7 +25,7 @@ const BarbellComponent = (props) => {
             decrementClick={decrementClick}
             incrementClick={incrementClick}
           />
-          <input type="submit" value="ADD TO QUOTATION CART" className="add-to-cart-button" />
+          <input type="submit" value="ADD TO CART" className="add-to-cart-button" />
         </form>
       </div>
     </div>
