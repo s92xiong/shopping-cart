@@ -106,7 +106,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 823px) {
   .navbar {
     height: 20%;
     display: flex;
@@ -185,7 +185,7 @@ body {
   min-width: 240px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 823px) {
   .home-component {
     display: flex;
     flex-direction: column;
@@ -253,7 +253,7 @@ body {
   padding-top: 7px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 823px) {
   .shop-items {
     display: grid;
     grid-template-columns: 1fr;
@@ -310,7 +310,7 @@ body {
   background-size: cover;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 823px) {
   .about-component {
     display: grid;
     grid-template-columns: 1fr;
@@ -328,14 +328,14 @@ body {
 }
 
 .large-item-image {
-  height: 610px;
-  width: 610px;
+  height: 580px;
+  width: 580px;
 }
 
 .add-to-cart-div {
   margin-left: 20px;
   padding-bottom: 150px;
-  width: 270px;
+  width: 300px;
   height: 610px;
   display: flex;
   flex-direction: column;
@@ -415,7 +415,11 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 823px) {
+  .title {
+    padding-top: 17px;
+  }
+
   .barbell-shop-div {
     margin: 0;
     display: grid;
@@ -436,5 +440,22 @@ body {
     padding: 0;
     width: 80%;
     height: auto;
+  }
+}
+
+/* CONTROL FOR LANDSCAPE MOBILE VIEW */
+
+@media (max-height: 450px) {
+  .navbar {
+    height: 150px;
+  }
+
+  .large-item-image {
+    height: 300px;
+    width: 300px;
+  }
+
+  .logo {
+    display: none;
   }
 }
