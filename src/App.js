@@ -5,16 +5,9 @@ import Home from './components/Home';
 import Equipment from './components/Equipment';
 import About from './components/About';
 import ShoppingCart from './components/ShoppingCart';
-
-import './App.css';
+import imageArray from './components/imageData';
 import ShopItemProps from './components/Barbell/ShopItemProps';
-
-import competitionBar20kg from './images/eleiko-iwf-weightlifting-competition-bar.jpg';
-import competitionBar15kg from './images/eleiko-iwf-weightlifting-competition-bar-women.jpg';
-import trainingBar20kg from './images/eleiko-iwf-weightlifting-training-bar.jpg';
-import trainingBar15kg from './images/eleiko-iwf-weightlifting-training-bar-women.jpg';
-import performanceBar20kg from './images/eleiko-performance-weightlifting-bar.jpg';
-import performanceBar15kg from './images/eleiko-performance-weightlifting-bar-women.jpg';
+import './App.css';
 
 const App = (props) => {
   const [numberOfCartItems, setNumberOfCartItems] = useState(0);
@@ -58,7 +51,9 @@ const App = (props) => {
   const handleSubmit = (e) => {
     setNumberOfCartItems(numberOfCartItems + itemCount);
     setItemCount(1);
+    // Keep track of quantity of specific items added to cart
     arrayOfItems.forEach((item, index) =>  {
+      // If the current URL in browser matches the URL value in the object, then perform the code below
       if (window.location.href.includes(item.url)) {
         console.log(`The current URL matches the object item URL: ${item.url}`);
         const newObj = [...arrayOfItems]
@@ -68,39 +63,6 @@ const App = (props) => {
       }
     });
   };
-
-  // let currentURL = window.location.href;
-  // if (currentURL.includes(arrayOfItems.item1.url)) {
-  //   console.log(`The URL matches the ${arrayOfItems.item1.url}`);
-  // } else if (currentURL.includes(arrayOfItems.item2.url)) {
-  //   console.log(`The URL matches the ${arrayOfItems.item2.url}`);
-  // } else if (currentURL.includes(arrayOfItems.item3.url)) {
-  //   console.log(`The URL matches the ${arrayOfItems.item3.url}`);
-  // } else if (currentURL.includes(arrayOfItems.item4.url)) {
-  //   console.log(`The URL matches the ${arrayOfItems.item4.url}`);
-  // } else if (currentURL.includes(arrayOfItems.item5.url)) {
-  //   console.log(`The URL matches the ${arrayOfItems.item5.url}`);
-  // } else if (currentURL.includes(arrayOfItems.item6.url)) {
-  //   console.log(`The URL matches the ${arrayOfItems.item6.url}`);
-  // }
-
-  // const expr = window.location.href;
-  // switch (expr) {
-  //   case arrayOfItems.item1.url: 
-  //     console.log("The URL matches the given URL!");
-  //     break;
-  //   default:
-  //     console.log("No expressions!");
-  // }
-
-  // const objInfo = {
-  //   barID0: "id-0",
-  //   barID1: "id-1",
-  //   barID2: "id-2",
-  //   barID3: "id-3",
-  //   barID4: "id-4",
-  //   barID5: "id-5",
-  // }
 
   return (
     <div className="App">
@@ -114,7 +76,7 @@ const App = (props) => {
         <Route
           exact path={arrayOfItems[0].url}
           render={(props) => (<ShopItemProps 
-            image={competitionBar20kg}
+            image={imageArray[0]}
             itemName="IWF WEIGHTLIFTING COMPETITION BAR - 20 KG, MEN"
             itemPrice="$1,100.00 USD"
             itemCount={itemCount}
@@ -128,7 +90,7 @@ const App = (props) => {
         <Route
           exact path={arrayOfItems[1].url}
           render={(props) => (<ShopItemProps 
-            image={competitionBar15kg}
+            image={imageArray[1]}
             itemName="IWF WEIGHTLIFTING COMPETITION BAR - 15 KG, WOMEN"
             itemPrice="$1,100.00 USD"
             itemCount={itemCount}
@@ -142,7 +104,7 @@ const App = (props) => {
         <Route
           exact path={arrayOfItems[2].url}
           render={(props) => (<ShopItemProps 
-            image={trainingBar20kg}
+            image={imageArray[2]}
             itemName="IWF WEIGHTLIFTING TRAINING BAR - 20 KG, MEN"
             itemPrice="$1,100.00 USD"
             itemCount={itemCount}
@@ -156,7 +118,7 @@ const App = (props) => {
         <Route
           exact path={arrayOfItems[3].url}
           render={(props) => (<ShopItemProps 
-            image={trainingBar15kg}
+            image={imageArray[3]}
             itemName="IWF WEIGHTLIFTING TRAINING BAR - 15 KG, WOMEN"
             itemPrice="$915.00 USD"
             itemCount={itemCount}
@@ -170,7 +132,7 @@ const App = (props) => {
         <Route
           exact path={arrayOfItems[4].url}
           render={(props) => (<ShopItemProps 
-            image={performanceBar20kg}
+            image={imageArray[4]}
             itemName="WEIGHTLIFTING PERFORMANCE BAR - 20 KG, MEN"
             itemPrice="$776.00 USD"
             itemCount={itemCount}
@@ -184,7 +146,7 @@ const App = (props) => {
         <Route
           exact path={arrayOfItems[5].url}
           render={(props) => (<ShopItemProps 
-            image={performanceBar15kg}
+            image={imageArray[5]}
             itemName="WEIGHTLIFTING PERFORMANCE BAR - 15 KG, WOMEN"
             itemPrice="$776.00 USD"
             itemCount={itemCount}
