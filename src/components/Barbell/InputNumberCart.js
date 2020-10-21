@@ -5,7 +5,7 @@ const InputNumberCart = (props) => {
     <div className="quantity">
       <button className="input-button decrement"onClick={props.decrementClick}>-</button>
       <input 
-        className="input-field-number" 
+        className={props.classNameInput}
         type="number"
         value={props.itemCount} 
         onChange={props.handleChange}

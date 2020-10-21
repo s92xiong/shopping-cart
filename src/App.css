@@ -459,3 +459,66 @@ body {
     display: none;
   }
 }
+
+/* SHOPPING CART COMPONENT */
+
+.shopping-cart-header {
+  display: flex;
+  align-items: center;
+  background-color: #eeeeee;
+  margin: 0;
+  width: 100vw;
+  height: 4vw;
+  color: #adadad;
+  font-family: 'Rubik', sans-serif;
+  font-size: 0.9rem;
+}
+
+.shopping-cart-header p {
+  margin-left: 5%;
+}
+
+.item-cart-image {
+  width: 100px;
+  height: 100px;
+}
+
+.item-cart-div {
+  display: flex;
+  align-items: center;
+}
+
+.item-quantity {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.decrement-item-count{
+  width: 20px;
+  height: 30px;
+}
+
+.increment-item-count{
+  width: 20px;
+  height: 30px;
+}
+
+.cart-number-input-field {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+.cart-number-input-field::-webkit-outer-spin-button,
+.cart-number-input-field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+.cart-number-input-field[type=number] {
+  -moz-appearance: textfield;
+}
+
+.fa-trash {
+  color: rgb(95, 95, 95);
+}

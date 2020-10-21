@@ -15,6 +15,7 @@ const RenderShopItem = (props) => {
           handleChange={props.handleChange}
           decrementClick={props.decrementClick}
           incrementClick={props.incrementClick}
+          classNameInput="input-field-number"
         />
         <input type="submit" value="ADD TO CART" className="add-to-cart-button" onClick={props.handleSubmit} />
       </div>
