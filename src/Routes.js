@@ -4,7 +4,7 @@ import App from './App';
 
 const Routes = () => {
   return (
-    <HashRouter basename="/">
+    <HashRouter>
       <App />
     </HashRouter>
   );
