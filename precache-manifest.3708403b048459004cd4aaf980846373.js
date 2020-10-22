@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d0ed2511da873cba30ee5afb4490dd29",
+    "revision": "575142b1a76ea24a80617530ac4bc202",
     "url": "/s92xiong/shopping-cart.git/index.html"
   },
   {
-    "revision": "f4d44890b60ed3bc6aa3",
+    "revision": "be0fdc1e375aa49952e2",
     "url": "/s92xiong/shopping-cart.git/static/css/main.d44b3235.chunk.css"
   },
   {
-    "revision": "21136a81af961b82ff9e",
-    "url": "/s92xiong/shopping-cart.git/static/js/2.7fd42361.chunk.js"
+    "revision": "dc506090bbe2104225c6",
+    "url": "/s92xiong/shopping-cart.git/static/js/2.5e570aa0.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/s92xiong/shopping-cart.git/static/js/2.7fd42361.chunk.js.LICENSE.txt"
+    "url": "/s92xiong/shopping-cart.git/static/js/2.5e570aa0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f4d44890b60ed3bc6aa3",
-    "url": "/s92xiong/shopping-cart.git/static/js/main.7acf9746.chunk.js"
+    "revision": "be0fdc1e375aa49952e2",
+    "url": "/s92xiong/shopping-cart.git/static/js/main.49e017b0.chunk.js"
   },
   {
     "revision": "3046cee84dbd50692aad",
