@@ -173,7 +173,7 @@ const App = () => {
 
         <Route
           exact path={arrayOfItems[1].url}
-          render={(props) => (<ShopItemProps {...props} 
+          render={(props) => (<ShopItemProps
             image={imageArray[1]}
             itemName={arrayOfItems[1].name}
             itemPrice="$1,100.00 USD"
@@ -187,7 +187,7 @@ const App = () => {
 
         <Route
           exact path={arrayOfItems[2].url}
-          render={(props) => (<ShopItemProps {...props} 
+          render={(props) => (<ShopItemProps
             image={imageArray[2]}
             itemName={arrayOfItems[2].name}
             itemPrice="$915.00 USD"
@@ -201,7 +201,7 @@ const App = () => {
 
         <Route
           exact path={arrayOfItems[3].url}
-          render={(props) => (<ShopItemProps {...props} 
+          render={(props) => (<ShopItemProps
             image={imageArray[3]}
             itemName={arrayOfItems[3].name}
             itemPrice="$915.00 USD"
@@ -215,7 +215,7 @@ const App = () => {
 
         <Route
           exact path={arrayOfItems[4].url}
-          render={(props) => (<ShopItemProps {...props} 
+          render={(props) => (<ShopItemProps
             image={imageArray[4]}
             itemName={arrayOfItems[4].name}
             itemPrice="$776.00 USD"
@@ -229,7 +229,7 @@ const App = () => {
 
         <Route
           exact path={arrayOfItems[5].url}
-          render={(props) => (<ShopItemProps {...props} 
+          render={(props) => (<ShopItemProps
             image={imageArray[5]}
             itemName={arrayOfItems[5].name}
             itemPrice="$776.00 USD"
