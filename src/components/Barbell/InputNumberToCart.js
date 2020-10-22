@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputNumberCart = (props) => {
+const InputNumberToCart = (props) => {
   return (
     <div className="quantity">
       <button className="input-button decrement"onClick={props.decrementClick}>-</button>
@@ -15,4 +15,4 @@ const InputNumberCart = (props) => {
   );
 };
 
-export default InputNumberCart;
+export default InputNumberToCart;

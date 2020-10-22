@@ -82,7 +82,6 @@ const App = () => {
       setArrayOfItems(newObj);
       const temp = calcTotalPrice().toFixed(2);
       setTotalPrice(temp);
-      // (numberOfCartItems === 1) ? setNumberOfCartItems(1) : setNumberOfCartItems(numberOfCartItems - 1);
       const tempNumber = calcTotalCartItems();
       setNumberOfCartItems(tempNumber);
     }
@@ -96,7 +95,6 @@ const App = () => {
       setArrayOfItems(newObj);
       const temp = calcTotalPrice().toFixed(2);
       setTotalPrice(temp);
-      // setNumberOfCartItems(numberOfCartItems + 1);
       const tempNumber = calcTotalCartItems();
       setNumberOfCartItems(tempNumber);
     }

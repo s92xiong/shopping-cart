@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShoppingCart2 = (props) => {
+const ShoppingCartItems = (props) => {
   const handleInputChange = (e) => e.target.value;
 
   return props.array.map((element, i) => {
@@ -27,4 +27,4 @@ const ShoppingCart2 = (props) => {
   });
 };
 
-export default ShoppingCart2;
+export default ShoppingCartItems;

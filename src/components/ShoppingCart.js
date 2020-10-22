@@ -1,5 +1,5 @@
 import React from 'react';
-import ShoppingCart2 from './ShoppingCartItems';
+import ShoppingCartItems from './ShoppingCartItems';
 
 const ShoppingCart = (props) => {
   if (props.numberOfCartItems === 0) {
@@ -16,7 +16,7 @@ const ShoppingCart = (props) => {
       <div className="shopping-cart-header"><p>Shopping Cart</p></div>
       <div className="shopping-cart-component">
         <div className="shopping-cart-component-inner">
-          <ShoppingCart2
+          <ShoppingCartItems
             array={props.array}
             image={props.image}
             decrementCount={props.decrementCount}
@@ -35,6 +35,3 @@ const ShoppingCart = (props) => {
 };
 
 export default ShoppingCart;
-
-// (2) Style "You have no items in your cart"
-// (3) Style cart items

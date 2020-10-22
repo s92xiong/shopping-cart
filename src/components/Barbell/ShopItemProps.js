@@ -1,6 +1,5 @@
 import React from 'react';
 import RenderShopItem from './RenderShopItem';
-// import competitionBar20kg from '../../images/eleiko-iwf-weightlifting-competition-bar.jpg';
 
 const ShopItemProps = (props) => {
   return (

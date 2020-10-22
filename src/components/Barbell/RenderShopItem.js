@@ -1,5 +1,5 @@
 import React from 'react';
-import InputNumberCart from './InputNumberCart';
+import InputNumberToCart from './InputNumberToCart';
 
 const RenderShopItem = (props) => {
   return (
@@ -10,7 +10,7 @@ const RenderShopItem = (props) => {
         <hr/>
         <p>{props.itemName}</p>
         <p><strong>{props.itemPrice}</strong></p>
-        <InputNumberCart
+        <InputNumberToCart
           itemCount={props.itemCount}
           handleChange={props.handleChange}
           decrementClick={props.decrementClick}
