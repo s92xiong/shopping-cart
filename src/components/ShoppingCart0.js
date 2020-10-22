@@ -1,45 +1,7 @@
-import React, { useState } from 'react';
-// import ShoppingCart1 from './ShoppingCart1';
+import React from 'react';
 import ShoppingCart2 from './ShoppingCart2';
 
 const ShoppingCart = (props) => {
-
-  const calcTotalPrice = () => {
-    let totalSum = 0;    
-    props.array.forEach(element => {
-      let objSum = 0;
-      if (element.count > 0) {
-        objSum = element.price * element.count;
-      } 
-      totalSum = totalSum + objSum
-    });
-    return totalSum;
-  };
-  const totalSum = calcTotalPrice();
-  const [shoppingCartItemCount, setShoppingCartItemCount] = useState(props.array);
-  const [totalSumState, setTotalSumState] = useState(totalSum);
-
-  const decrementCount = (index) => {
-    const handler = () => {
-      const newObj = [...shoppingCartItemCount];
-      (newObj[index].count === 1) ? newObj[index].count = 1 : newObj[index].count--;
-      setShoppingCartItemCount(newObj);
-      setTotalSumState(totalSum);
-    }
-    return handler;
-  }
-
-  // Move this function 1 level up to ShoppingCart0.js
-  const incrementCount = (index) => {
-    const handler = () => {
-      const newObj = [...shoppingCartItemCount];
-      newObj[index].count++;
-      setShoppingCartItemCount(newObj);
-      setTotalSumState(totalSum);
-    }
-    return handler;
-  }
-
   if (props.numberOfCartItems === 0) {
     return <h1 className="conditional-header">You have no items in your cart!</h1>
   }
@@ -47,18 +9,23 @@ const ShoppingCart = (props) => {
   return (
     <div className="component shopping-cart-component">
       <div className="shopping-cart-header"><p>Shopping Cart</p></div>
-      <ShoppingCart2 
-        // numberOfCartItems={props.numberOfCartItems}
+      <ShoppingCart2
         array={props.array}
         image={props.image}
-        decrementCount={decrementCount}
-        incrementCount={incrementCount}
+        decrementCount={props.decrementCount}
+        incrementCount={props.incrementCount}
+        // removeItemFromCart={removeItemFromCart}
       />
       <div>
-        Total Price: $ {totalSumState}
+        <h2>Summary</h2>
+        <p>Total Price: ${props.totalSumState}</p>
       </div>
     </div>
   );
 };
 
 export default ShoppingCart;
+
+// (1) Add delete button functionality to remove the item from the cart
+// (2) Style "You have no items in your cart"
+// (3) Style cart items

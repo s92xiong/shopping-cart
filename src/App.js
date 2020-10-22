@@ -50,42 +50,63 @@ const App = (props) => {
       url: "/equipment/performance-bar-15kg-women-id-5",
     },
   ]);
+  
+  const [totalSumState, setTotalSumState] = useState(0);
 
   const calcTotalPrice = () => {
+    let totalSum = 0;    
+    arrayOfItems.forEach(element => {
+      let objSum = 0;
+      if (element.count > 0) {
+        objSum = element.price * element.count;
+      } 
+      totalSum = totalSum + objSum;
+    });
+    return totalSum;
+  }
+
+  const decrementCount = (index) => {
     const handler = () => {
-      let totalSum = 0;    
-        arrayOfItems.forEach(element => {
-          let objSum = 0;
-          if (element.count > 0) {
-            objSum = element.price * element.count;
-          } 
-          totalSum = totalSum + objSum
-        });
-        return totalSum;
-      };
+      const newObj = [...arrayOfItems];
+      (newObj[index].count === 1) ? newObj[index].count = 1 : newObj[index].count--;
+      setArrayOfItems(newObj);
+      const temp = calcTotalPrice().toFixed(2);
+      setTotalSumState(temp);
+      (numberOfCartItems === 1) ? setNumberOfCartItems(1) : setNumberOfCartItems(numberOfCartItems - 1);
+    }
     return handler;
   };
 
-  // const [totalSum, setTotalSum] = useState(calcTotalPrice());
+  const incrementCount = (index) => {
+    const handler = () => {
+      const newObj = [...arrayOfItems];
+      newObj[index].count++;
+      setArrayOfItems(newObj);
+      const temp = calcTotalPrice().toFixed(2);
+      setTotalSumState(temp);
+      setNumberOfCartItems(numberOfCartItems + 1);
+    }
+    return handler;
+  };
 
-  const decrementItemCount = () => (itemCount === 1) ? 1 : setItemCount(itemCount - 1);
-  const incrementItemCount = () => setItemCount(itemCount + 1);
-  const handleChange = (e) => e.target.value;
-  const handleSubmit = (e) => {
+  const decrementAddItemToCartNum = () => (itemCount === 1) ? 1 : setItemCount(itemCount - 1);
+  const incrementAddItemToCartNum = () => setItemCount(itemCount + 1);
+  const handleChangeAddItemToCart = (e) => e.target.value;
+  
+  const addItemToCart = () => {
     setNumberOfCartItems(numberOfCartItems + itemCount);
     setItemCount(1);
     // Keep track of quantity of specific items added to cart
     arrayOfItems.forEach((item, index) =>  {
-      // Get access to the number in the input box
       const inputNum = document.querySelector('.input-field-number');
-      console.log(inputNum.value);
-      // If the current URL in browser matches the URL value in the object, then perform the code below
+      // If the current URL in browser matches the URL value in the object
       if (window.location.href.includes(item.url)) {
-        console.log(`The current URL matches the object item URL: ${item.url}`);
         const newObj = [...arrayOfItems]
         newObj[index].count += parseInt(inputNum.value);
         setArrayOfItems(newObj);
-        console.table(newObj);
+        const temp = calcTotalPrice().toFixed(2);
+        setTotalSumState(temp);
+        // console.table(newObj);
       }
     });
   };
@@ -97,7 +118,6 @@ const App = (props) => {
         <Route exact path="/" component={Home} />
         <Route exact path="/equipment" component={Equipment} />
         <Route exact path="/about" component={About} />
-        {/* <Route exact path="/cart" component={ShoppingCart} /> */}
 
         <Route
           exact path="/cart"
@@ -105,6 +125,10 @@ const App = (props) => {
             image={imageArray}
             numberOfCartItems={numberOfCartItems}
             array={arrayOfItems}
+            // removeItemFromCart={removeItemFromCart}
+            decrementCount={decrementCount}
+            incrementCount={incrementCount}
+            totalSumState={totalSumState}
           />)}
         />
                 
@@ -115,11 +139,10 @@ const App = (props) => {
             itemName={arrayOfItems[0].name}
             itemPrice="$1,100.00 USD"
             itemCount={itemCount}
-            decrementClick={decrementItemCount}
-            incrementClick={incrementItemCount}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            calcFunc={calcTotalPrice()}
+            decrementClick={decrementAddItemToCartNum}
+            incrementClick={incrementAddItemToCartNum}
+            handleChange={handleChangeAddItemToCart}
+            handleSubmit={addItemToCart}
           />)}
         />
 
@@ -130,10 +153,10 @@ const App = (props) => {
             itemName={arrayOfItems[1].name}
             itemPrice="$1,100.00 USD"
             itemCount={itemCount}
-            decrementClick={decrementItemCount}
-            incrementClick={incrementItemCount}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
+            decrementClick={decrementAddItemToCartNum}
+            incrementClick={incrementAddItemToCartNum}
+            handleChange={handleChangeAddItemToCart}
+            handleSubmit={addItemToCart}
           />)}
         />
 
@@ -142,12 +165,12 @@ const App = (props) => {
           render={(props) => (<ShopItemProps 
             image={imageArray[2]}
             itemName={arrayOfItems[2].name}
-            itemPrice="$1,100.00 USD"
+            itemPrice="$915.00 USD"
             itemCount={itemCount}
-            decrementClick={decrementItemCount}
-            incrementClick={incrementItemCount}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
+            decrementClick={decrementAddItemToCartNum}
+            incrementClick={incrementAddItemToCartNum}
+            handleChange={handleChangeAddItemToCart}
+            handleSubmit={addItemToCart}
           />)}
         />
 
@@ -158,10 +181,10 @@ const App = (props) => {
             itemName={arrayOfItems[3].name}
             itemPrice="$915.00 USD"
             itemCount={itemCount}
-            decrementClick={decrementItemCount}
-            incrementClick={incrementItemCount}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
+            decrementClick={decrementAddItemToCartNum}
+            incrementClick={incrementAddItemToCartNum}
+            handleChange={handleChangeAddItemToCart}
+            handleSubmit={addItemToCart}
           />)}
         />
 
@@ -172,10 +195,10 @@ const App = (props) => {
             itemName={arrayOfItems[4].name}
             itemPrice="$776.00 USD"
             itemCount={itemCount}
-            decrementClick={decrementItemCount}
-            incrementClick={incrementItemCount}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
+            decrementClick={decrementAddItemToCartNum}
+            incrementClick={incrementAddItemToCartNum}
+            handleChange={handleChangeAddItemToCart}
+            handleSubmit={addItemToCart}
           />)}
         />
 
@@ -186,10 +209,10 @@ const App = (props) => {
             itemName={arrayOfItems[5].name}
             itemPrice="$776.00 USD"
             itemCount={itemCount}
-            decrementClick={decrementItemCount}
-            incrementClick={incrementItemCount}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
+            decrementClick={decrementAddItemToCartNum}
+            incrementClick={incrementAddItemToCartNum}
+            handleChange={handleChangeAddItemToCart}
+            handleSubmit={addItemToCart}
           />)}
         />
       </Switch>
