@@ -48,7 +48,7 @@ const App = () => {
       name: "WEIGHTLIFTING PERFORMANCE BAR - 15 KG, WOMEN",
       price: 776,
       count: 0,
-      url: "equipment/performance-bar-15kg-women-id-5",
+      url: "/equipment/performance-bar-15kg-women-id-5",
     },
   ]);
 
