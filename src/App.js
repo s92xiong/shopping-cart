@@ -158,7 +158,7 @@ const App = () => {
         />
                 
         <Route
-          exact path={arrayOfItems[0].url}
+          exact path="#/equipment/competition-bar-20kg-men-id-0"
           render={(props) => (<ShopItemProps {...props} 
             image={imageArray[0]}
             itemName={arrayOfItems[0].name}
