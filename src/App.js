@@ -18,37 +18,37 @@ const App = () => {
       name: "IWF WEIGHTLIFTING COMPETITION BAR - 20 KG, MEN",
       price: 1110,
       count: 0,
-      url: "/#/equipment/0",
+      url: "/equipment/0",
     },
     {
       name: "IWF WEIGHTLIFTING COMPETITION BAR - 15 KG, WOMEN",
       price: 1110,
       count: 0,
-      url: "/#/equipment/1",
+      url: "/equipment/1",
     },
     {
       name: "IWF WEIGHTLIFTING TRAINING BAR - 20 KG, MEN",
       price: 915,
       count: 0,
-      url: "/#/equipment/2",
+      url: "/equipment/2",
     },
     {
       name: "IWF WEIGHTLIFTING TRAINING BAR - 15 KG, WOMEN",
       price: 915,
       count: 0,
-      url: "/#/equipment/3",
+      url: "/equipment/3",
     },
     {
       name: "WEIGHTLIFTING PERFORMANCE BAR - 20 KG, MEN",
       price: 776,
       count: 0,
-      url: "/#/equipment/4",
+      url: "/equipment/4",
     },
     {
       name: "WEIGHTLIFTING PERFORMANCE BAR - 15 KG, WOMEN",
       price: 776,
       count: 0,
-      url: "/#/equipment/5",
+      url: "/equipment/5",
     },
   ]);
 
@@ -173,7 +173,7 @@ const App = () => {
 
         <Route
           exact path={arrayOfItems[1].url}
-          render={(props) => (<ShopItemProps
+          render={(props) => (<ShopItemProps {...props} 
             image={imageArray[1]}
             itemName={arrayOfItems[1].name}
             itemPrice="$1,100.00 USD"
@@ -201,7 +201,7 @@ const App = () => {
 
         <Route
           exact path={arrayOfItems[3].url}
-          render={(props) => (<ShopItemProps
+          render={(props) => (<ShopItemProps {...props} 
             image={imageArray[3]}
             itemName={arrayOfItems[3].name}
             itemPrice="$915.00 USD"
@@ -215,7 +215,7 @@ const App = () => {
 
         <Route
           exact path={arrayOfItems[4].url}
-          render={(props) => (<ShopItemProps
+          render={(props) => (<ShopItemProps {...props} 
             image={imageArray[4]}
             itemName={arrayOfItems[4].name}
             itemPrice="$776.00 USD"
@@ -229,7 +229,7 @@ const App = () => {
 
         <Route
           exact path={arrayOfItems[5].url}
-          render={(props) => (<ShopItemProps
+          render={(props) => (<ShopItemProps {...props} 
             image={imageArray[5]}
             itemName={arrayOfItems[5].name}
             itemPrice="$776.00 USD"

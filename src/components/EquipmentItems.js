@@ -1,7 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 
-const ShopItem = (props) => {
+const EquipmentItem = (props) => {
   return (
     <div className="item">
       <Link className="link link-shop-item" to={props.link}>
@@ -16,4 +16,4 @@ const ShopItem = (props) => {
   );
 }
 
-export default ShopItem;
+export default EquipmentItem;
