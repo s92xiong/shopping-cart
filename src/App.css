@@ -376,12 +376,18 @@ body {
 .input-button {
   width: 10%;
   height: 30px;
+  background-color: #1d6881;
+  color: #fefefe;
+  border: none;
+  font-size: 20px;
 }
 
 .input-field-number {
   width: 80%;
   height: 30px;
   text-align: center;
+  border-radius: 0;
+  border: 1px #555555 solid;
 }
 
 /* Hide Arrow Buttons for Input type number */
@@ -461,6 +467,15 @@ body {
 }
 
 /* SHOPPING CART COMPONENT */
+.shopping-cart-component {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.conditional-header {
+  font-family: 'Rubik', sans-serif;
+  margin: 3%;
+}
 
 .shopping-cart-header {
   display: flex;
@@ -468,7 +483,7 @@ body {
   background-color: #eeeeee;
   margin: 0;
   width: 100vw;
-  height: 4vw;
+  height: 50px;
   color: #888888;
   font-family: 'Rubik', sans-serif;
   font-size: 0.9rem;
@@ -478,14 +493,29 @@ body {
   margin-left: 5%;
 }
 
+.item-cart-div {
+  width: 90%;
+  margin: 25px auto;
+  display: flex;
+  align-items: center;
+  
+  padding-bottom: 25px;
+  border-bottom: 1px rgb(228, 228, 228) solid;
+}
+
+.item-cart-div > * {
+  margin: 10px;
+}
+
 .item-cart-image {
   width: 100px;
   height: 100px;
 }
 
-.item-cart-div {
-  display: flex;
-  align-items: center;
+.item-cart-div-para {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .item-quantity {
@@ -494,20 +524,21 @@ body {
   justify-content: center;
 }
 
-.decrement-item-count{
-  width: 20px;
+.input-button-cart {
+  width: 30px;
   height: 30px;
-}
-
-.increment-item-count{
-  width: 20px;
-  height: 30px;
+  background-color: #1d6881;
+  color: #fefefe;
+  border: none;
+  font-size: 20px;
 }
 
 .cart-number-input-field {
-  width: 30px;
+  width: 40px;
   height: 30px;
   text-align: center;
+  border-radius: 0;
+  border: 1px rgb(85, 85, 85) solid
 }
 .cart-number-input-field::-webkit-outer-spin-button,
 .cart-number-input-field::-webkit-inner-spin-button {
@@ -523,4 +554,43 @@ body {
   color: rgb(95, 95, 95);
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.total-price {
+  margin: 40px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.total-price > * {
+  margin: 0 0 20px 0;
+}
+
+.checkout {
+  background-color: #ab9e76;
+  width: 150px;
+  height: 45px;
+  border-radius: 0.5rem;
+  border: 1px solid goldenrod;
+  outline: 0;
+  color: #fefefe;
+  font-size: 17px;
+}
+
+@media (max-width: 823px) {
+  .shopping-cart-component {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-cart-div {
+    width: 100;
+    margin: 10px;
+    overflow: scroll;
+
+  }
+
+  .total-price {
+    margin: 15px;
+    font-family: 'Rubik', sans-serif;
+  }
 }

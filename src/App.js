@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Equipment from './components/Equipment';
 import About from './components/About';
-import ShoppingCart from './components/ShoppingCart0';
+import ShoppingCart from './components/ShoppingCart';
 import imageArray from './components/imageData';
 import ShopItemProps from './components/Barbell/ShopItemProps';
 import './App.css';
