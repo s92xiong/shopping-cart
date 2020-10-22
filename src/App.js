@@ -18,37 +18,37 @@ const App = () => {
       name: "IWF WEIGHTLIFTING COMPETITION BAR - 20 KG, MEN",
       price: 1110,
       count: 0,
-      url: "#/equipment/competition-bar-20kg-men-id-0",
+      url: "/equipment/competition-bar-20kg-men-id-0",
     },
     {
       name: "IWF WEIGHTLIFTING COMPETITION BAR - 15 KG, WOMEN",
       price: 1110,
       count: 0,
-      url: "#/equipment/competition-bar-15kg-women-id-1",
+      url: "/equipment/competition-bar-15kg-women-id-1",
     },
     {
       name: "IWF WEIGHTLIFTING TRAINING BAR - 20 KG, MEN",
       price: 915,
       count: 0,
-      url: "#/equipment/training-bar-20kg-men-id-2",
+      url: "/equipment/training-bar-20kg-men-id-2",
     },
     {
       name: "IWF WEIGHTLIFTING TRAINING BAR - 15 KG, WOMEN",
       price: 915,
       count: 0,
-      url: "#/equipment/training-bar-15kg-women-id-3",
+      url: "/equipment/training-bar-15kg-women-id-3",
     },
     {
       name: "WEIGHTLIFTING PERFORMANCE BAR - 20 KG, MEN",
       price: 776,
       count: 0,
-      url: "/#/equipment/performance-bar-20kg-men-id-4",
+      url: "/equipment/performance-bar-20kg-men-id-4",
     },
     {
       name: "WEIGHTLIFTING PERFORMANCE BAR - 15 KG, WOMEN",
       price: 776,
       count: 0,
-      url: "#/equipment/performance-bar-15kg-women-id-5",
+      url: "equipment/performance-bar-15kg-women-id-5",
     },
   ]);
 
@@ -141,11 +141,11 @@ const App = () => {
       <Navbar cartItemCount={numberOfCartItems} />  
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/#/equipment" component={Equipment} />
-        <Route exact path="/#/about" component={About} />
+        <Route exact path="/equipment" component={Equipment} />
+        <Route exact path="/about" component={About} />
 
         <Route
-          exact path="/#/cart"
+          exact path="/cart"
           render={(props) => (<ShoppingCart {...props} 
             image={imageArray}
             numberOfCartItems={numberOfCartItems}
@@ -158,7 +158,7 @@ const App = () => {
         />
                 
         <Route
-          exact path="#/equipment/competition-bar-20kg-men-id-0"
+          exact path={arrayOfItems[0].url}
           render={(props) => (<ShopItemProps {...props} 
             image={imageArray[0]}
             itemName={arrayOfItems[0].name}
