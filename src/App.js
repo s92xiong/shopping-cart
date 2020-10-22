@@ -140,12 +140,12 @@ const App = () => {
     <div className="App">
       <Navbar cartItemCount={numberOfCartItems} />  
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/equipment" component={Equipment} />
-        <Route exact path="/about" component={About} />
+        <Route exact path="/#/" component={Home} />
+        <Route exact path="/#/equipment" component={Equipment} />
+        <Route exact path="/#/about" component={About} />
 
         <Route
-          exact path="/cart"
+          exact path="/#/cart"
           render={(props) => (<ShoppingCart {...props} 
             image={imageArray}
             numberOfCartItems={numberOfCartItems}
