@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.29799a5d.chunk.css",
-    "main.js": "/shopping-cart/static/js/main.6e03fb99.chunk.js",
-    "main.js.map": "/shopping-cart/static/js/main.6e03fb99.chunk.js.map",
+    "main.js": "/shopping-cart/static/js/main.f53e0acd.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.f53e0acd.chunk.js.map",
     "runtime-main.js": "/shopping-cart/static/js/runtime-main.6e52efc5.js",
     "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.6e52efc5.js.map",
-    "static/js/2.5e570aa0.chunk.js": "/shopping-cart/static/js/2.5e570aa0.chunk.js",
-    "static/js/2.5e570aa0.chunk.js.map": "/shopping-cart/static/js/2.5e570aa0.chunk.js.map",
+    "static/js/2.7fd42361.chunk.js": "/shopping-cart/static/js/2.7fd42361.chunk.js",
+    "static/js/2.7fd42361.chunk.js.map": "/shopping-cart/static/js/2.7fd42361.chunk.js.map",
     "index.html": "/shopping-cart/index.html",
-    "precache-manifest.a6c46d3d10bd81db62ae16514487c659.js": "/shopping-cart/precache-manifest.a6c46d3d10bd81db62ae16514487c659.js",
+    "precache-manifest.32f6e585e579b65cc890c5865618209b.js": "/shopping-cart/precache-manifest.32f6e585e579b65cc890c5865618209b.js",
     "service-worker.js": "/shopping-cart/service-worker.js",
     "static/css/main.29799a5d.chunk.css.map": "/shopping-cart/static/css/main.29799a5d.chunk.css.map",
-    "static/js/2.5e570aa0.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.5e570aa0.chunk.js.LICENSE.txt",
+    "static/js/2.7fd42361.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.7fd42361.chunk.js.LICENSE.txt",
     "static/media/App.css": "/shopping-cart/static/media/nature-image.80ed1c44.png",
     "static/media/eleiko-iwf-weightlifting-competition-bar-women.jpg": "/shopping-cart/static/media/eleiko-iwf-weightlifting-competition-bar-women.573691dd.jpg",
     "static/media/eleiko-iwf-weightlifting-competition-bar.jpg": "/shopping-cart/static/media/eleiko-iwf-weightlifting-competition-bar.45c1111f.jpg",
@@ -24,8 +24,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6e52efc5.js",
-    "static/js/2.5e570aa0.chunk.js",
+    "static/js/2.7fd42361.chunk.js",
     "static/css/main.29799a5d.chunk.css",
-    "static/js/main.6e03fb99.chunk.js"
+    "static/js/main.f53e0acd.chunk.js"
   ]
 }
