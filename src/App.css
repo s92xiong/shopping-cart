@@ -521,4 +521,6 @@ body {
 
 .fa-trash {
   color: rgb(95, 95, 95);
+  font-size: 1.2rem;
+  cursor: pointer;
 }

@@ -3,7 +3,12 @@ import ShoppingCart2 from './ShoppingCart2';
 
 const ShoppingCart = (props) => {
   if (props.numberOfCartItems === 0) {
-    return <h1 className="conditional-header">You have no items in your cart!</h1>
+    return (
+      <div>
+        <div className="component shopping-cart-component"></div>
+        <h1 className="conditional-header">You have no items in your cart!</h1>
+      </div>
+    );
   }
 
   return (
@@ -14,7 +19,7 @@ const ShoppingCart = (props) => {
         image={props.image}
         decrementCount={props.decrementCount}
         incrementCount={props.incrementCount}
-        // removeItemFromCart={removeItemFromCart}
+        removeItemFromCart={props.removeItemFromCart}
       />
       <div>
         <h2>Summary</h2>

@@ -9,9 +9,10 @@ import imageArray from './components/imageData';
 import ShopItemProps from './components/Barbell/ShopItemProps';
 import './App.css';
 
-const App = (props) => {
-  const [numberOfCartItems, setNumberOfCartItems] = useState(0);
+const App = () => {
   const [itemCount, setItemCount] = useState(1);
+  const [numberOfCartItems, setNumberOfCartItems] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   const [arrayOfItems, setArrayOfItems] = useState([
     {
       name: "IWF WEIGHTLIFTING COMPETITION BAR - 20 KG, MEN",
@@ -50,8 +51,17 @@ const App = (props) => {
       url: "/equipment/performance-bar-15kg-women-id-5",
     },
   ]);
-  
-  const [totalSumState, setTotalSumState] = useState(0);
+
+  const calcTotalCartItems = () => {
+    const newArray = [...arrayOfItems];
+    let total = 0;
+    newArray.forEach(element => {
+      if (element.count > 0) {
+        total += element.count;
+      } 
+    });
+    return total;
+  }
 
   const calcTotalPrice = () => {
     let totalSum = 0;    
@@ -71,8 +81,10 @@ const App = (props) => {
       (newObj[index].count === 1) ? newObj[index].count = 1 : newObj[index].count--;
       setArrayOfItems(newObj);
       const temp = calcTotalPrice().toFixed(2);
-      setTotalSumState(temp);
-      (numberOfCartItems === 1) ? setNumberOfCartItems(1) : setNumberOfCartItems(numberOfCartItems - 1);
+      setTotalPrice(temp);
+      // (numberOfCartItems === 1) ? setNumberOfCartItems(1) : setNumberOfCartItems(numberOfCartItems - 1);
+      const tempNumber = calcTotalCartItems();
+      setNumberOfCartItems(tempNumber);
     }
     return handler;
   };
@@ -83,8 +95,10 @@ const App = (props) => {
       newObj[index].count++;
       setArrayOfItems(newObj);
       const temp = calcTotalPrice().toFixed(2);
-      setTotalSumState(temp);
-      setNumberOfCartItems(numberOfCartItems + 1);
+      setTotalPrice(temp);
+      // setNumberOfCartItems(numberOfCartItems + 1);
+      const tempNumber = calcTotalCartItems();
+      setNumberOfCartItems(tempNumber);
     }
     return handler;
   };
@@ -94,7 +108,6 @@ const App = (props) => {
   const handleChangeAddItemToCart = (e) => e.target.value;
   
   const addItemToCart = () => {
-    setNumberOfCartItems(numberOfCartItems + itemCount);
     setItemCount(1);
     // Keep track of quantity of specific items added to cart
     arrayOfItems.forEach((item, index) =>  {
@@ -105,10 +118,24 @@ const App = (props) => {
         newObj[index].count += parseInt(inputNum.value);
         setArrayOfItems(newObj);
         const temp = calcTotalPrice().toFixed(2);
-        setTotalSumState(temp);
+        setTotalPrice(temp);
         // console.table(newObj);
+        const tempNumber = calcTotalCartItems();
+        setNumberOfCartItems(tempNumber);
       }
     });
+  };
+
+  const removeItemFromCart = (index) => {
+    const handle = () => {
+      const newObj = [...arrayOfItems];
+      setNumberOfCartItems(numberOfCartItems - newObj[index].count);
+      newObj[index].count = 0;
+      setArrayOfItems(newObj);
+      const temp = calcTotalPrice().toFixed(2);
+      setTotalPrice(temp);
+    };
+    return handle;
   };
 
   return (
@@ -125,10 +152,10 @@ const App = (props) => {
             image={imageArray}
             numberOfCartItems={numberOfCartItems}
             array={arrayOfItems}
-            // removeItemFromCart={removeItemFromCart}
             decrementCount={decrementCount}
             incrementCount={incrementCount}
-            totalSumState={totalSumState}
+            totalSumState={totalPrice}
+            removeItemFromCart={removeItemFromCart}
           />)}
         />
                 

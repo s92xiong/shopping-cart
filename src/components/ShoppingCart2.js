@@ -19,7 +19,7 @@ const ShoppingCart2 = (props) => {
             />
             <button className="input-button increment-item-count" onClick={props.incrementCount(i)}>+</button>
           </div>
-          <i className="fa fa-trash" onClick={props.removeItemFromCart}></i>
+          <i className="fa fa-trash" onClick={props.removeItemFromCart(i)}></i>
         </div>
       );
     }
