@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.29799a5d.chunk.css",
-    "main.js": "/shopping-cart/static/js/main.f53e0acd.chunk.js",
-    "main.js.map": "/shopping-cart/static/js/main.f53e0acd.chunk.js.map",
+    "main.css": "/shopping-cart/static/css/main.973298a9.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.79fae15b.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.79fae15b.chunk.js.map",
     "runtime-main.js": "/shopping-cart/static/js/runtime-main.6e52efc5.js",
     "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.6e52efc5.js.map",
-    "static/js/2.7fd42361.chunk.js": "/shopping-cart/static/js/2.7fd42361.chunk.js",
-    "static/js/2.7fd42361.chunk.js.map": "/shopping-cart/static/js/2.7fd42361.chunk.js.map",
+    "static/js/2.bb7a409e.chunk.js": "/shopping-cart/static/js/2.bb7a409e.chunk.js",
+    "static/js/2.bb7a409e.chunk.js.map": "/shopping-cart/static/js/2.bb7a409e.chunk.js.map",
     "index.html": "/shopping-cart/index.html",
-    "precache-manifest.32f6e585e579b65cc890c5865618209b.js": "/shopping-cart/precache-manifest.32f6e585e579b65cc890c5865618209b.js",
+    "precache-manifest.5a814c39f930ee82febb70e92917c0fc.js": "/shopping-cart/precache-manifest.5a814c39f930ee82febb70e92917c0fc.js",
     "service-worker.js": "/shopping-cart/service-worker.js",
-    "static/css/main.29799a5d.chunk.css.map": "/shopping-cart/static/css/main.29799a5d.chunk.css.map",
-    "static/js/2.7fd42361.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.7fd42361.chunk.js.LICENSE.txt",
+    "static/css/main.973298a9.chunk.css.map": "/shopping-cart/static/css/main.973298a9.chunk.css.map",
+    "static/js/2.bb7a409e.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.bb7a409e.chunk.js.LICENSE.txt",
     "static/media/App.css": "/shopping-cart/static/media/nature-image.80ed1c44.png",
     "static/media/eleiko-iwf-weightlifting-competition-bar-women.jpg": "/shopping-cart/static/media/eleiko-iwf-weightlifting-competition-bar-women.573691dd.jpg",
     "static/media/eleiko-iwf-weightlifting-competition-bar.jpg": "/shopping-cart/static/media/eleiko-iwf-weightlifting-competition-bar.45c1111f.jpg",
@@ -24,8 +24,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6e52efc5.js",
-    "static/js/2.7fd42361.chunk.js",
-    "static/css/main.29799a5d.chunk.css",
-    "static/js/main.f53e0acd.chunk.js"
+    "static/js/2.bb7a409e.chunk.js",
+    "static/css/main.973298a9.chunk.css",
+    "static/js/main.79fae15b.chunk.js"
   ]
 }
