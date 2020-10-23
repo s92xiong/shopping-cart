@@ -6,11 +6,11 @@ import Equipment from './components/Equipment';
 import About from './components/About';
 import ShoppingCart from './components/ShoppingCart';
 import imageArray from './components/imageData';
-import ShopItemProps from './components/Barbell/ShopItemProps';
+// import ShopItemProps from './components/Barbell/ShopItemProps';
 import './App.css';
 
 const App = () => {
-  const [itemCount, setItemCount] = useState(1);
+  // const [itemCount, setItemCount] = useState(1);
   const [numberOfCartItems, setNumberOfCartItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [arrayOfItems, setArrayOfItems] = useState([
@@ -101,28 +101,37 @@ const App = () => {
     return handler;
   };
 
-  const decrementAddItemToCartNum = () => (itemCount === 1) ? 1 : setItemCount(itemCount - 1);
-  const incrementAddItemToCartNum = () => setItemCount(itemCount + 1);
-  const handleChangeAddItemToCart = (e) => e.target.value;
+  // const decrementAddItemToCartNum = () => (itemCount === 1) ? 1 : setItemCount(itemCount - 1);
+  // const incrementAddItemToCartNum = () => setItemCount(itemCount + 1);
+  // const handleChangeAddItemToCart = (e) => e.target.value;
   
-  const addItemToCart = () => {
-    setItemCount(1);
-    // Keep track of quantity of specific items added to cart
-    arrayOfItems.forEach((item, index) =>  {
-      const inputNum = document.querySelector('.input-field-number');
-      // If the current URL in browser matches the URL value in the object
-      if (window.location.href.includes(item.url)) {
-        const newObj = [...arrayOfItems]
-        newObj[index].count += parseInt(inputNum.value);
-        setArrayOfItems(newObj);
-        const temp = calcTotalPrice().toFixed(2);
-        setTotalPrice(temp);
-        // console.table(newObj);
-        const tempNumber = calcTotalCartItems();
-        setNumberOfCartItems(tempNumber);
-      }
-    });
-  };
+  // const addItemToCart = () => {
+  //   setItemCount(1);
+  //   // Keep track of quantity of specific items added to cart
+  //   arrayOfItems.forEach((item, index) =>  {
+  //     const inputNum = document.querySelector('.input-field-number');
+  //     // If the current URL in browser matches the URL value in the object
+  //     if (window.location.href.includes(item.url)) {
+  //       const newObj = [...arrayOfItems]
+  //       newObj[index].count += parseInt(inputNum.value);
+  //       setArrayOfItems(newObj);
+  //       const temp = calcTotalPrice().toFixed(2);
+  //       setTotalPrice(temp);
+  //       // console.table(newObj);
+  //       const tempNumber = calcTotalCartItems();
+  //       setNumberOfCartItems(tempNumber);
+  //     }
+  //   });
+  // };
+
+  const addItemToCart = (e) => {
+    const i = parseInt(e.target.name);
+    setNumberOfCartItems(numberOfCartItems + 1);
+    const newArray = [...arrayOfItems];
+    newArray[i].count++;
+    setArrayOfItems(newArray);
+    console.table(newArray);
+  }
 
   const removeItemFromCart = (index) => {
     const handle = () => {
@@ -141,8 +150,17 @@ const App = () => {
       <Navbar cartItemCount={numberOfCartItems} />  
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/equipment" component={Equipment} />
+
+        {/* <Route exact path="/equipment" component={Equipment} /> */}
+        
         <Route exact path="/about" component={About} />
+
+        <Route
+          exact path="/equipment"
+          render={(props) => (<Equipment {...props} 
+            onClick={addItemToCart}
+          />)}
+        />
 
         <Route
           exact path="/cart"
@@ -157,7 +175,7 @@ const App = () => {
           />)}
         />
                 
-        <Route
+        {/* <Route
           exact path={arrayOfItems[0].url}
           render={(props) => (<ShopItemProps {...props} 
             image={imageArray[0]}
@@ -239,7 +257,7 @@ const App = () => {
             handleChange={handleChangeAddItemToCart}
             handleSubmit={addItemToCart}
           />)}
-        />
+        /> */}
       </Switch>
     </div>
   );

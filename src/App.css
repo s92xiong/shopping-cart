@@ -237,11 +237,13 @@ body {
 .item h4 {
   font-family: 'Roboto', sans-serif;
   padding: 7px 0 5px 0;
+  font-size: 20px;
 }
 
 .item p {
   font-family: 'Barlow Semi Condensed', sans-serif;
   line-height: 1.3rem;
+  font-size: 19px;
 }
 
 .item-name:hover {
@@ -251,6 +253,23 @@ body {
 .item-price {
   font-weight: 600;
   padding-top: 7px;
+}
+
+.equipment-button {
+  width: 100%;
+  height: 30px;
+  background-color: #1d6881;
+  color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.3s;
+}
+
+.equipment-button:hover {
+  background-color: #1b85a8;
 }
 
 @media (max-width: 823px) {
@@ -413,7 +432,6 @@ body {
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
   transition: background-color ease-in 0.3s;
-
 }
 
 .add-to-cart-button:hover {
