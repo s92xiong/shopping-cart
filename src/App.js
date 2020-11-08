@@ -80,7 +80,7 @@ const App = () => {
       const newObj = [...arrayOfItems];
       (newObj[index].count === 1) ? newObj[index].count = 1 : newObj[index].count--;
       setArrayOfItems(newObj);
-      const temp = calcTotalPrice().toFixed(2);
+      const temp = calcTotalPrice(); //.toFixed(2);
       setTotalPrice(temp);
       const tempNumber = calcTotalCartItems();
       setNumberOfCartItems(tempNumber);
@@ -93,7 +93,7 @@ const App = () => {
       const newObj = [...arrayOfItems];
       newObj[index].count++;
       setArrayOfItems(newObj);
-      const temp = calcTotalPrice().toFixed(2);
+      const temp = calcTotalPrice() //.toFixed(2);
       setTotalPrice(temp);
       const tempNumber = calcTotalCartItems();
       setNumberOfCartItems(tempNumber);
@@ -126,11 +126,13 @@ const App = () => {
 
   const addItemToCart = (e) => {
     const i = parseInt(e.target.name);
+    setTotalPrice(totalPrice + arrayOfItems[i].price);
+    // console.log(totalPrice);
     setNumberOfCartItems(numberOfCartItems + 1);
     const newArray = [...arrayOfItems];
     newArray[i].count++;
     setArrayOfItems(newArray);
-    console.table(newArray);
+    // console.table(newArray);
   }
 
   const removeItemFromCart = (index) => {
@@ -139,7 +141,7 @@ const App = () => {
       setNumberOfCartItems(numberOfCartItems - newObj[index].count);
       newObj[index].count = 0;
       setArrayOfItems(newObj);
-      const temp = calcTotalPrice().toFixed(2);
+      const temp = calcTotalPrice(); //.toFixed(2);
       setTotalPrice(temp);
     };
     return handle;

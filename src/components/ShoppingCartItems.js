@@ -8,7 +8,7 @@ const ShoppingCartItems = (props) => {
       return (
         <div className="item-cart-div" key={i}>
           <img className="item-cart-image" src={props.image[i]} alt=""/>
-          <p className="item-cart-div-para">ELEIKO {element.name}</p>
+          <p className="item-cart-div-para">ELEIKO {element.name}: <strong>${element.price}</strong></p>
           <div className="item-quantity">
             <button className="input-button input-button-cart decrement-item-count"onClick={props.decrementCount(i)}>-</button>
             <input 

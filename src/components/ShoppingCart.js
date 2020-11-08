@@ -26,7 +26,7 @@ const ShoppingCart = (props) => {
         </div>
         <div className="total-price">
           <h2>Order Summary</h2>
-          <p>Total: <strong>${props.totalSumState}</strong></p>
+          <p>Total: <strong>${props.totalSumState.toFixed(2)}</strong></p>
           <button className="checkout">Checkout</button>
         </div>
       </div>
